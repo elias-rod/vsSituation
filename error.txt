@@ -1,0 +1,231 @@
+
+Azure Functions Core Tools
+Core Tools Version:       4.0.5030 Commit hash: N/A  (64-bit)
+Function Runtime Version: 4.15.2.20177
+
+[2023-03-03T17:00:07.209Z] Found C:\Users\elias\Desktop\vsSituation\vsSituation\vsSituation.csproj. Using for user secrets file configuration.
+[2023-03-03T17:00:08.240Z] Azure Functions .NET Worker (PID: 17076) initialized in debug mode. Waiting for debugger to attach...
+
+Functions:
+
+        PocTimerTriggerAsync: timerTrigger
+
+For detailed output, run func with --verbose flag.
+[2023-03-03T17:00:08.391Z] Executing 'Functions.PocTimerTriggerAsync' (Reason='Timer fired at 2023-03-03T14:00:08.3664648-03:00', Id=b675a65a-9ac0-4ab4-aa20-e3c2fb0407db)
+[2023-03-03T17:00:08.393Z] Trigger Details: UnscheduledInvocationReason: RunOnStartup
+[2023-03-03T17:00:10.382Z] Worker process started and initialized.
+[2023-03-03T17:00:10.565Z] Sending Message
+[2023-03-03T17:00:10.585Z] sbq-pocif-dev-wus2-1-c5c2e5ed-34cf-4f22-be28-d12fa346123f: SendAsync start. MessageCount = 1
+[2023-03-03T17:00:10.631Z] Creating send link for Identifier: sbq-pocif-dev-wus2-1-c5c2e5ed-34cf-4f22-be28-d12fa346123f.[2023-03-03T17:00:12.433Z] DefaultAzureCredential.GetToken invoked. Scopes: [ https://servicebus.azure.net/.default ] ParentRequestId:
+[2023-03-03T17:00:12.439Z] EnvironmentCredential.GetToken invoked. Scopes: [ https://servicebus.azure.net/.default ] ParentRequestId:
+[2023-03-03T17:00:12.441Z] EnvironmentCredential.GetToken was unable to retrieve an access token. Scopes: [ https://servicebus.azure.net/.default ] ParentRequestId:  Exception: Azure.Identity.CredentialUnavailableException (0x80131500): EnvironmentCredential authentication unavailable. Environment variables are not fully configured. See the troubleshooting guide for more information. https://aka.ms/azsdk/net/identity/environmentcredential/troubleshoot
+[2023-03-03T17:00:12.446Z] ManagedIdentityCredential.GetToken invoked. Scopes: [ https://servicebus.azure.net/.default ] ParentRequestId:
+[2023-03-03T17:00:12.458Z] Request [bf95612a-76a4-4bfe-8432-c06eb45529fe] GET http://169.254.169.254/metadata/identity/oauth2/token?api-version=2018-02-01&resource=REDACTED
+[2023-03-03T17:00:12.461Z] Metadata:REDACTED
+[2023-03-03T17:00:12.462Z] x-ms-client-request-id:bf95612a-76a4-4bfe-8432-c06eb45529fe
+[2023-03-03T17:00:12.463Z] x-ms-return-client-request-id:true
+[2023-03-03T17:00:12.463Z] User-Agent:azsdk-net-Identity/1.7.0 (.NET 7.0.3; Microsoft Windows 10.0.19045)
+[2023-03-03T17:00:12.464Z] client assembly: Azure.Identity
+[2023-03-03T17:00:12.494Z] Request [bf95612a-76a4-4bfe-8432-c06eb45529fe] exception Azure.RequestFailedException: A socket operation was attempted to an unreachable network. (169.254.169.254:80)
+[2023-03-03T17:00:12.495Z]  ---> System.Net.Http.HttpRequestException: A socket operation was attempted to an unreachable network. (169.254.169.254:80)
+[2023-03-03T17:00:12.496Z]  ---> System.Net.Sockets.SocketException (10051): A socket operation was attempted to an unreachable network.
+[2023-03-03T17:00:12.499Z]    at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+[2023-03-03T17:00:12.500Z]    at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+[2023-03-03T17:00:12.501Z]    at System.Net.Sockets.Socket.<ConnectAsync>g__WaitForConnectWithCancellation|281_0(AwaitableSocketAsyncEventArgs saea, ValueTask connectTask, CancellationToken cancellationToken)
+[2023-03-03T17:00:12.502Z]    at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+[2023-03-03T17:00:12.503Z]    --- End of inner exception stack trace ---
+[2023-03-03T17:00:12.504Z]    at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+[2023-03-03T17:00:12.505Z]    at System.Net.Http.HttpConnectionPool.ConnectAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+[2023-03-03T17:00:12.506Z]    at System.Net.Http.HttpConnectionPool.CreateHttp11ConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+[2023-03-03T17:00:12.508Z]    at System.Net.Http.HttpConnectionPool.AddHttp11ConnectionAsync(QueueItem queueItem)
+[2023-03-03T17:00:12.508Z]    at System.Threading.Tasks.TaskCompletionSourceWithCancellation`1.WaitWithCancellationAsync(CancellationToken cancellationToken)
+[2023-03-03T17:00:12.511Z]    at System.Net.Http.HttpConnectionPool.HttpConnectionWaiter`1.WaitForConnectionAsync(Boolean async, CancellationToken requestCancellationToken)
+[2023-03-03T17:00:12.512Z]    at System.Net.Http.HttpConnectionPool.SendWithVersionDetectionAndRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
+[2023-03-03T17:00:12.513Z]    at System.Net.Http.HttpClient.<SendAsync>g__Core|83_0(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationTokenSource cts, Boolean disposeCts, CancellationTokenSource pendingRequestsCts, CancellationToken originalCancellationToken)
+[2023-03-03T17:00:12.516Z]    at Azure.Core.Pipeline.HttpClientTransport.ProcessAsync(HttpMessage message, Boolean async)
+[2023-03-03T17:00:12.517Z]    --- End of inner exception stack trace ---
+[2023-03-03T17:00:12.518Z]    at Azure.Core.Pipeline.HttpClientTransport.ProcessAsync(HttpMessage message, Boolean async)
+[2023-03-03T17:00:12.519Z]    at Azure.Core.Pipeline.HttpPipelineTransportPolicy.ProcessAsync(HttpMessage message, ReadOnlyMemory`1 pipeline)
+[2023-03-03T17:00:12.520Z]    at Azure.Core.Pipeline.ResponseBodyPolicy.ProcessAsync(HttpMessage message, ReadOnlyMemory`1 pipeline, Boolean async)
+[2023-03-03T17:00:12.522Z]    at Azure.Core.Pipeline.LoggingPolicy.ProcessAsync(HttpMessage message, ReadOnlyMemory`1 pipeline, Boolean async)
+[2023-03-03T17:00:13.122Z] Host lock lease acquired by instance ID '00000000000000000000000061FB55F3'.
+[2023-03-03T17:00:13.241Z] Request [bf95612a-76a4-4bfe-8432-c06eb45529fe] attempt number 1 took 00.0s
+[2023-03-03T17:00:13.241Z] Request [bf95612a-76a4-4bfe-8432-c06eb45529fe] GET http://169.254.169.254/metadata/identity/oauth2/token?api-version=2018-02-01&resource=REDACTED
+[2023-03-03T17:00:13.244Z] Metadata:REDACTED
+[2023-03-03T17:00:13.244Z] x-ms-client-request-id:bf95612a-76a4-4bfe-8432-c06eb45529fe
+[2023-03-03T17:00:13.245Z] Request [bf95612a-76a4-4bfe-8432-c06eb45529fe] exception Azure.RequestFailedException: A socket operation was attempted to an unreachable network. (169.254.169.254:80)
+[2023-03-03T17:00:13.245Z] x-ms-return-client-request-id:true
+[2023-03-03T17:00:13.246Z]  ---> System.Net.Http.HttpRequestException: A socket operation was attempted to an unreachable network. (169.254.169.254:80)
+[2023-03-03T17:00:13.247Z] User-Agent:azsdk-net-Identity/1.7.0 (.NET 7.0.3; Microsoft Windows 10.0.19045)
+[2023-03-03T17:00:13.248Z]  ---> System.Net.Sockets.SocketException (10051): A socket operation was attempted to an unreachable network.
+[2023-03-03T17:00:13.249Z] client assembly: Azure.Identity
+[2023-03-03T17:00:13.250Z]    at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+[2023-03-03T17:00:13.252Z]    at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+[2023-03-03T17:00:13.253Z]    at System.Net.Sockets.Socket.<ConnectAsync>g__WaitForConnectWithCancellation|281_0(AwaitableSocketAsyncEventArgs saea, ValueTask connectTask, CancellationToken cancellationToken)
+[2023-03-03T17:00:13.257Z]    at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+[2023-03-03T17:00:13.258Z]    --- End of inner exception stack trace ---
+[2023-03-03T17:00:13.260Z]    at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+[2023-03-03T17:00:13.263Z]    at System.Net.Http.HttpConnectionPool.ConnectAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+[2023-03-03T17:00:13.264Z]    at System.Net.Http.HttpConnectionPool.CreateHttp11ConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+[2023-03-03T17:00:13.266Z]    at System.Net.Http.HttpConnectionPool.AddHttp11ConnectionAsync(QueueItem queueItem)
+[2023-03-03T17:00:13.267Z]    at System.Threading.Tasks.TaskCompletionSourceWithCancellation`1.WaitWithCancellationAsync(CancellationToken cancellationToken)
+[2023-03-03T17:00:13.268Z]    at System.Net.Http.HttpConnectionPool.HttpConnectionWaiter`1.WaitForConnectionAsync(Boolean async, CancellationToken requestCancellationToken)
+[2023-03-03T17:00:13.269Z]    at System.Net.Http.HttpConnectionPool.SendWithVersionDetectionAndRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
+[2023-03-03T17:00:13.270Z]    at System.Net.Http.HttpClient.<SendAsync>g__Core|83_0(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationTokenSource cts, Boolean disposeCts, CancellationTokenSource pendingRequestsCts, CancellationToken originalCancellationToken)
+[2023-03-03T17:00:13.272Z]    at Azure.Core.Pipeline.HttpClientTransport.ProcessAsync(HttpMessage message, Boolean async)
+[2023-03-03T17:00:13.273Z]    --- End of inner exception stack trace ---
+[2023-03-03T17:00:13.274Z]    at Azure.Core.Pipeline.HttpClientTransport.ProcessAsync(HttpMessage message, Boolean async)
+[2023-03-03T17:00:13.275Z]    at Azure.Core.Pipeline.HttpPipelineTransportPolicy.ProcessAsync(HttpMessage message, ReadOnlyMemory`1 pipeline)
+[2023-03-03T17:00:13.277Z]    at Azure.Core.Pipeline.ResponseBodyPolicy.ProcessAsync(HttpMessage message, ReadOnlyMemory`1 pipeline, Boolean async)
+[2023-03-03T17:00:13.278Z]    at Azure.Core.Pipeline.LoggingPolicy.ProcessAsync(HttpMessage message, ReadOnlyMemory`1 pipeline, Boolean async)
+[2023-03-03T17:00:14.897Z] Request [bf95612a-76a4-4bfe-8432-c06eb45529fe] attempt number 2 took 00.0s
+[2023-03-03T17:00:14.897Z] Request [bf95612a-76a4-4bfe-8432-c06eb45529fe] GET http://169.254.169.254/metadata/identity/oauth2/token?api-version=2018-02-01&resource=REDACTED
+[2023-03-03T17:00:14.899Z] Metadata:REDACTED
+[2023-03-03T17:00:14.900Z] x-ms-client-request-id:bf95612a-76a4-4bfe-8432-c06eb45529fe
+[2023-03-03T17:00:14.901Z] x-ms-return-client-request-id:true
+[2023-03-03T17:00:14.900Z] Request [bf95612a-76a4-4bfe-8432-c06eb45529fe] exception Azure.RequestFailedException: A socket operation was attempted to an unreachable network. (169.254.169.254:80)
+[2023-03-03T17:00:14.903Z]  ---> System.Net.Http.HttpRequestException: A socket operation was attempted to an unreachable network. (169.254.169.254:80)
+[2023-03-03T17:00:14.904Z]  ---> System.Net.Sockets.SocketException (10051): A socket operation was attempted to an unreachable network.
+[2023-03-03T17:00:14.902Z] User-Agent:azsdk-net-Identity/1.7.0,(.NET 7.0.3; Microsoft Windows 10.0.19045)
+[2023-03-03T17:00:14.906Z]    at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+[2023-03-03T17:00:14.907Z] client assembly: Azure.Identity
+[2023-03-03T17:00:14.908Z]    at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+[2023-03-03T17:00:14.910Z]    at System.Net.Sockets.Socket.<ConnectAsync>g__WaitForConnectWithCancellation|281_0(AwaitableSocketAsyncEventArgs saea, ValueTask connectTask, CancellationToken cancellationToken)
+[2023-03-03T17:00:14.911Z]    at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+[2023-03-03T17:00:14.913Z]    --- End of inner exception stack trace ---
+[2023-03-03T17:00:14.914Z]    at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+[2023-03-03T17:00:14.915Z]    at System.Net.Http.HttpConnectionPool.ConnectAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+[2023-03-03T17:00:14.916Z]    at System.Net.Http.HttpConnectionPool.CreateHttp11ConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+[2023-03-03T17:00:14.917Z]    at System.Net.Http.HttpConnectionPool.AddHttp11ConnectionAsync(QueueItem queueItem)
+[2023-03-03T17:00:14.918Z]    at System.Threading.Tasks.TaskCompletionSourceWithCancellation`1.WaitWithCancellationAsync(CancellationToken cancellationToken)
+[2023-03-03T17:00:14.920Z]    at System.Net.Http.HttpConnectionPool.HttpConnectionWaiter`1.WaitForConnectionAsync(Boolean async, CancellationToken requestCancellationToken)
+[2023-03-03T17:00:14.921Z]    at System.Net.Http.HttpConnectionPool.SendWithVersionDetectionAndRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
+[2023-03-03T17:00:14.922Z]    at System.Net.Http.HttpClient.<SendAsync>g__Core|83_0(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationTokenSource cts, Boolean disposeCts, CancellationTokenSource pendingRequestsCts, CancellationToken originalCancellationToken)
+[2023-03-03T17:00:14.923Z]    at Azure.Core.Pipeline.HttpClientTransport.ProcessAsync(HttpMessage message, Boolean async)
+[2023-03-03T17:00:14.924Z]    --- End of inner exception stack trace ---
+[2023-03-03T17:00:14.925Z]    at Azure.Core.Pipeline.HttpClientTransport.ProcessAsync(HttpMessage message, Boolean async)
+[2023-03-03T17:00:14.928Z]    at Azure.Core.Pipeline.HttpPipelineTransportPolicy.ProcessAsync(HttpMessage message, ReadOnlyMemory`1 pipeline)
+[2023-03-03T17:00:14.929Z]    at Azure.Core.Pipeline.ResponseBodyPolicy.ProcessAsync(HttpMessage message, ReadOnlyMemory`1 pipeline, Boolean async)
+[2023-03-03T17:00:14.930Z]    at Azure.Core.Pipeline.LoggingPolicy.ProcessAsync(HttpMessage message, ReadOnlyMemory`1 pipeline, Boolean async)
+[2023-03-03T17:00:18.187Z] Request [bf95612a-76a4-4bfe-8432-c06eb45529fe] attempt number 3 took 00.0s
+[2023-03-03T17:00:18.190Z] Request [bf95612a-76a4-4bfe-8432-c06eb45529fe] exception Azure.RequestFailedException: A socket operation was attempted to an unreachable network. (169.254.169.254:80)
+[2023-03-03T17:00:18.187Z] Request [bf95612a-76a4-4bfe-8432-c06eb45529fe] GET http://169.254.169.254/metadata/identity/oauth2/token?api-version=2018-02-01&resource=REDACTED
+[2023-03-03T17:00:18.196Z]  ---> System.Net.Http.HttpRequestException: A socket operation was attempted to an unreachable network. (169.254.169.254:80)
+[2023-03-03T17:00:18.197Z] Metadata:REDACTED
+[2023-03-03T17:00:18.198Z]  ---> System.Net.Sockets.SocketException (10051): A socket operation was attempted to an unreachable network.
+[2023-03-03T17:00:18.199Z] x-ms-client-request-id:bf95612a-76a4-4bfe-8432-c06eb45529fe
+[2023-03-03T17:00:18.201Z] x-ms-return-client-request-id:true
+[2023-03-03T17:00:18.201Z] VisualStudioCredential.GetToken invoked. Scopes: [ https://servicebus.azure.net/.default ] ParentRequestId:
+[2023-03-03T17:00:18.193Z] ManagedIdentityCredential.GetToken was unable to retrieve an access token. Scopes: [ https://servicebus.azure.net/.default ] ParentRequestId:  Exception: Azure.Identity.CredentialUnavailableException (0x80131500): ManagedIdentityCredential authentication unavailable. Multiple attempts failed to obtain a token from the managed identity endpoint.[2023-03-03T17:00:18.202Z] User-Agent:azsdk-net-Identity/1.7.0,(.NET 7.0.3; Microsoft Windows 10.0.19045)
+
+[2023-03-03T17:00:18.200Z]    at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+[2023-03-03T17:00:18.206Z]  ---> System.AggregateException (0x80131500): Retry failed after 4 tries. Retry settings can be adjusted in ClientOptions.Retry or by configuring a custom retry policy in ClientOptions.RetryPolicy. (A socket operation was attempted to an unreachable network. (169.254.169.254:80)) (A socket operation was attempted to an unreachable network. (169.254.169.254:80)) (A socket operation was attempted to an unreachable network. (169.254.169.254:80)) (A socket operation was attempted to an unreachable network. (169.254.169.254:80))
+[2023-03-03T17:00:18.207Z]    at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+[2023-03-03T17:00:18.209Z]  ---> Azure.RequestFailedException (0x80131500): A socket operation was attempted to an unreachable network. (169.254.169.254:80)
+[2023-03-03T17:00:18.211Z]    at System.Net.Sockets.Socket.<ConnectAsync>g__WaitForConnectWithCancellation|281_0(AwaitableSocketAsyncEventArgs saea, ValueTask connectTask, CancellationToken cancellationToken)
+[2023-03-03T17:00:18.214Z]  ---> System.Net.Http.HttpRequestException (0x80004005): A socket operation was attempted to an unreachable network. (169.254.169.254:80)
+[2023-03-03T17:00:18.215Z]    at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+[2023-03-03T17:00:18.219Z]  ---> System.Net.Sockets.SocketException (0x80004005): A socket operation was attempted to an unreachable network.
+[2023-03-03T17:00:18.224Z]    --- End of inner exception stack trace ---
+[2023-03-03T17:00:18.226Z]    at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+[2023-03-03T17:00:18.228Z]    at System.Net.Http.HttpConnectionPool.ConnectAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+[2023-03-03T17:00:18.206Z] client assembly: Azure.Identity
+[2023-03-03T17:00:18.231Z]    at System.Net.Http.HttpConnectionPool.CreateHttp11ConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+[2023-03-03T17:00:18.239Z]    at System.Net.Http.HttpConnectionPool.AddHttp11ConnectionAsync(QueueItem queueItem)
+[2023-03-03T17:00:18.240Z]    at System.Threading.Tasks.TaskCompletionSourceWithCancellation`1.WaitWithCancellationAsync(CancellationToken cancellationToken)
+[2023-03-03T17:00:18.242Z]    at System.Net.Http.HttpConnectionPool.HttpConnectionWaiter`1.WaitForConnectionAsync(Boolean async, CancellationToken requestCancellationToken)
+[2023-03-03T17:00:18.243Z]    at System.Net.Http.HttpConnectionPool.SendWithVersionDetectionAndRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
+[2023-03-03T17:00:18.245Z]    at System.Net.Http.HttpClient.<SendAsync>g__Core|83_0(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationTokenSource cts, Boolean disposeCts, CancellationTokenSource pendingRequestsCts, CancellationToken originalCancellationToken)
+[2023-03-03T17:00:18.255Z]    at Azure.Core.Pipeline.HttpClientTransport.ProcessAsync(HttpMessage message, Boolean async)
+[2023-03-03T17:00:18.257Z]    --- End of inner exception stack trace ---
+[2023-03-03T17:00:18.258Z]    at Azure.Core.Pipeline.HttpClientTransport.ProcessAsync(HttpMessage message, Boolean async)
+[2023-03-03T17:00:18.260Z]    at Azure.Core.Pipeline.HttpPipelineTransportPolicy.ProcessAsync(HttpMessage message, ReadOnlyMemory`1 pipeline)
+[2023-03-03T17:00:18.261Z]    at Azure.Core.Pipeline.ResponseBodyPolicy.ProcessAsync(HttpMessage message, ReadOnlyMemory`1 pipeline, Boolean async)
+[2023-03-03T17:00:18.262Z]    at Azure.Core.Pipeline.LoggingPolicy.ProcessAsync(HttpMessage message, ReadOnlyMemory`1 pipeline, Boolean async)
+[2023-03-03T17:00:20.896Z] VisualStudioCredential.GetToken succeeded. Scopes: [ https://servicebus.azure.net/.default ] ParentRequestId:  ExpiresOn: 2023-03-03T17:30:23.0000000+00:00
+[2023-03-03T17:00:20.898Z] DefaultAzureCredential.GetToken succeeded. Scopes: [ https://servicebus.azure.net/.default ] ParentRequestId:  ExpiresOn: 2023-03-03T17:30:23.0000000+00:00
+[2023-03-03T17:00:20.897Z] DefaultAzureCredential credential selected: Azure.Identity.VisualStudioCredential
+[2023-03-03T17:00:22.186Z] Send link created for Identifier: sbq-pocif-dev-wus2-1-c5c2e5ed-34cf-4f22-be28-d12fa346123f.
+[2023-03-03T17:00:22.418Z] sbq-pocif-dev-wus2-1-c5c2e5ed-34cf-4f22-be28-d12fa346123f: SendAsync done.
+[2023-03-03T17:00:22.418Z] Message sent
+[2023-03-03T17:00:22.420Z] Sending event
+[2023-03-03T17:00:22.434Z] DefaultAzureCredential.GetToken invoked. Scopes: [ https://eventgrid.azure.net/.default ] ParentRequestId: 8aab4a2e-b14b-43a3-9b64-160de03627ef
+[2023-03-03T17:00:22.435Z] VisualStudioCredential.GetToken invoked. Scopes: [ https://eventgrid.azure.net/.default ] ParentRequestId: 8aab4a2e-b14b-43a3-9b64-160de03627ef
+[2023-03-03T17:00:24.708Z] VisualStudioCredential.GetToken was unable to retrieve an access token. Scopes: [ https://eventgrid.azure.net/.default ] ParentRequestId: 8aab4a2e-b14b-43a3-9b64-160de03627ef Exception: Azure.Identity.CredentialUnavailableException (0x80131500): Process "C:\Program Files\Microsoft Visual Studio\2022\Preview\Common7\IDE\CommonExtensions\Microsoft\Asal\TokenService\Microsoft.Asal.TokenService.exe" has failed with unexpected error: TS003: Error, The JSON-RPC connection with the remote party was lost before the request could complete..
+[2023-03-03T17:00:24.709Z] DefaultAzureCredential.GetToken was unable to retrieve an access token. Scopes: [ https://eventgrid.azure.net/.default ] ParentRequestId: 8aab4a2e-b14b-43a3-9b64-160de03627ef Exception: Azure.Identity.CredentialUnavailableException (0x80131500): Process "C:\Program Files\Microsoft Visual Studio\2022\Preview\Common7\IDE\CommonExtensions\Microsoft\Asal\TokenService\Microsoft.Asal.TokenService.exe" has failed with unexpected error: TS003: Error, The JSON-RPC connection with the remote party was lost before the request could complete..
+[2023-03-03T17:00:24.709Z]  ---> System.AggregateException (0x80131500): One or more errors occurred. (Process "C:\Program Files\Microsoft Visual Studio\2022\Preview\Common7\IDE\CommonExtensions\Microsoft\Asal\TokenService\Microsoft.Asal.TokenService.exe" has failed with unexpected error: TS003: Error, The JSON-RPC connection with the remote party was lost before the request could complete..) (Process "C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\Asal\TokenService\Microsoft.Asal.TokenService.exe" has failed with unexpected error: TS003: Error, TS004: Unable to get access token.  '
+[2023-03-03T17:00:24.710Z]  ---> System.AggregateException (0x80131500): One or more errors occurred. (Process "C:\Program Files\Microsoft Visual Studio\2022\Preview\Common7\IDE\CommonExtensions\Microsoft\Asal\TokenService\Microsoft.Asal.TokenService.exe" has failed with unexpected error: TS003: Error, The JSON-RPC connection with the remote party was lost before the request could complete..) (Process "C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\Asal\TokenService\Microsoft.Asal.TokenService.exe" has failed with unexpected error: TS003: Error, TS004: Unable to get access token.  '
+[2023-03-03T17:00:24.710Z] For potential mitigation and additional information go to the following url: 'https://aka.ms/vspreautherror''.)
+[2023-03-03T17:00:24.711Z] For potential mitigation and additional information go to the following url: 'https://aka.ms/vspreautherror''.)
+[2023-03-03T17:00:24.712Z]  ---> Azure.Identity.CredentialUnavailableException (0x80131500): Process "C:\Program Files\Microsoft Visual Studio\2022\Preview\Common7\IDE\CommonExtensions\Microsoft\Asal\TokenService\Microsoft.Asal.TokenService.exe" has failed with unexpected error: TS003: Error, The JSON-RPC connection with the remote party was lost before the request could complete..
+[2023-03-03T17:00:24.713Z]  ---> Azure.Identity.CredentialUnavailableException (0x80131500): Process "C:\Program Files\Microsoft Visual Studio\2022\Preview\Common7\IDE\CommonExtensions\Microsoft\Asal\TokenService\Microsoft.Asal.TokenService.exe" has failed with unexpected error: TS003: Error, The JSON-RPC connection with the remote party was lost before the request could complete..
+[2023-03-03T17:00:24.714Z]  ---> System.InvalidOperationException (0x80131509): TS003: Error, The JSON-RPC connection with the remote party was lost before the request could complete.
+[2023-03-03T17:00:24.715Z]  ---> System.InvalidOperationException (0x80131509): TS003: Error, The JSON-RPC connection with the remote party was lost before the request could complete.
+[2023-03-03T17:00:24.882Z] Executed 'Functions.PocTimerTriggerAsync' (Failed, Id=b675a65a-9ac0-4ab4-aa20-e3c2fb0407db, Duration=16506ms)
+[2023-03-03T17:00:24.884Z] System.Private.CoreLib: Exception while executing function: Functions.PocTimerTriggerAsync. System.Private.CoreLib: Result: Failure
+Exception: System.AggregateException: One or more errors occurred. (Process "C:\Program Files\Microsoft Visual Studio\2022\Preview\Common7\IDE\CommonExtensions\Microsoft\Asal\TokenService\Microsoft.Asal.TokenService.exe" has failed with unexpected error: TS003: Error, The JSON-RPC connection with the remote party was lost before the request could complete..)
+[2023-03-03T17:00:24.885Z]  ---> Azure.Identity.CredentialUnavailableException: Process "C:\Program Files\Microsoft Visual Studio\2022\Preview\Common7\IDE\CommonExtensions\Microsoft\Asal\TokenService\Microsoft.Asal.TokenService.exe" has failed with unexpected error: TS003: Error, The JSON-RPC connection with the remote party was lost before the request could complete..
+[2023-03-03T17:00:24.886Z]  ---> System.AggregateException: One or more errors occurred. (Process "C:\Program Files\Microsoft Visual Studio\2022\Preview\Common7\IDE\CommonExtensions\Microsoft\Asal\TokenService\Microsoft.Asal.TokenService.exe" has failed with unexpected error: TS003: Error, The JSON-RPC connection with the remote party was lost before the request could complete..) (Process "C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\Asal\TokenService\Microsoft.Asal.TokenService.exe" has failed with unexpected error: TS003: Error, TS004: Unable to get access token.  '
+[2023-03-03T17:00:24.888Z] For potential mitigation and additional information go to the following url: 'https://aka.ms/vspreautherror''.)
+[2023-03-03T17:00:24.890Z]  ---> Azure.Identity.CredentialUnavailableException: Process "C:\Program Files\Microsoft Visual Studio\2022\Preview\Common7\IDE\CommonExtensions\Microsoft\Asal\TokenService\Microsoft.Asal.TokenService.exe" has failed with unexpected error: TS003: Error, The JSON-RPC connection with the remote party was lost before the request could complete..
+[2023-03-03T17:00:24.891Z]  ---> System.InvalidOperationException: TS003: Error, The JSON-RPC connection with the remote party was lost before the request could complete.
+[2023-03-03T17:00:24.893Z]    at Azure.Identity.VisualStudioCredential.RunProcessesAsync(List`1 processStartInfos, Boolean async, CancellationToken cancellationToken)
+[2023-03-03T17:00:24.894Z]    --- End of inner exception stack trace ---
+[2023-03-03T17:00:24.902Z]    --- End of inner exception stack trace ---
+[2023-03-03T17:00:24.904Z]    at Azure.Identity.VisualStudioCredential.RunProcessesAsync(List`1 processStartInfos, Boolean async, CancellationToken cancellationToken)
+[2023-03-03T17:00:24.906Z]    at Azure.Identity.VisualStudioCredential.GetTokenImplAsync(TokenRequestContext requestContext, Boolean async, CancellationToken cancellationToken)
+[2023-03-03T17:00:24.907Z]  ---> (Inner Exception #1) Azure.Identity.CredentialUnavailableException: Process "C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\Asal\TokenService\Microsoft.Asal.TokenService.exe" has failed with unexpected error: TS003: Error, TS004: Unable to get access token.  '
+[2023-03-03T17:00:24.908Z] For potential mitigation and additional information go to the following url: 'https://aka.ms/vspreautherror''.
+[2023-03-03T17:00:24.910Z]  ---> System.InvalidOperationException: TS003: Error, TS004: Unable to get access token.  '
+[2023-03-03T17:00:24.914Z] For potential mitigation and additional information go to the following url: 'https://aka.ms/vspreautherror''
+[2023-03-03T17:00:24.921Z]    at Azure.Identity.VisualStudioCredential.RunProcessesAsync(List`1 processStartInfos, Boolean async, CancellationToken cancellationToken)
+[2023-03-03T17:00:24.922Z]    --- End of inner exception stack trace ---<---
+[2023-03-03T17:00:24.923Z]
+[2023-03-03T17:00:24.923Z]    --- End of inner exception stack trace ---
+[2023-03-03T17:00:24.924Z]    at Azure.Identity.CredentialDiagnosticScope.FailWrapAndThrow(Exception ex, String additionalMessage)
+[2023-03-03T17:00:24.925Z]    at Azure.Identity.VisualStudioCredential.GetTokenImplAsync(TokenRequestContext requestContext, Boolean async, CancellationToken cancellationToken)
+[2023-03-03T17:00:24.928Z]    at Azure.Identity.VisualStudioCredential.GetTokenAsync(TokenRequestContext requestContext, CancellationToken cancellationToken)
+[2023-03-03T17:00:24.937Z]    at Azure.Identity.DefaultAzureCredential.GetTokenFromCredentialAsync(TokenCredential credential, TokenRequestContext requestContext, Boolean async, CancellationToken cancellationToken)
+[2023-03-03T17:00:24.939Z]    at Azure.Identity.DefaultAzureCredential.GetTokenImplAsync(Boolean async, TokenRequestContext requestContext, CancellationToken cancellationToken)
+[2023-03-03T17:00:24.940Z]    at Azure.Identity.CredentialDiagnosticScope.FailWrapAndThrow(Exception ex, String additionalMessage)
+[2023-03-03T17:00:24.941Z]    at Azure.Identity.DefaultAzureCredential.GetTokenImplAsync(Boolean async, TokenRequestContext requestContext, CancellationToken cancellationToken)
+[2023-03-03T17:00:24.944Z]    at Azure.Identity.DefaultAzureCredential.GetTokenAsync(TokenRequestContext requestContext, CancellationToken cancellationToken)
+[2023-03-03T17:00:24.954Z]    at Azure.Core.Pipeline.BearerTokenAuthenticationPolicy.AccessTokenCache.GetHeaderValueFromCredentialAsync(TokenRequestContext context, Boolean async, CancellationToken cancellationToken)
+[2023-03-03T17:00:24.954Z]    at Azure.Core.Pipeline.BearerTokenAuthenticationPolicy.AccessTokenCache.GetHeaderValueAsync(HttpMessage message, TokenRequestContext context, Boolean async)
+[2023-03-03T17:00:24.955Z]    at Azure.Core.Pipeline.BearerTokenAuthenticationPolicy.AccessTokenCache.GetHeaderValueAsync(HttpMessage message, TokenRequestContext context, Boolean async)
+[2023-03-03T17:00:24.956Z]    at Azure.Core.Pipeline.BearerTokenAuthenticationPolicy.AuthenticateAndAuthorizeRequestAsync(HttpMessage message, TokenRequestContext context)
+[2023-03-03T17:00:24.957Z]    at Azure.Core.Pipeline.BearerTokenAuthenticationPolicy.ProcessAsync(HttpMessage message, ReadOnlyMemory`1 pipeline, Boolean async)
+[2023-03-03T17:00:24.969Z]    at Azure.Core.Pipeline.RedirectPolicy.ProcessAsync(HttpMessage message, ReadOnlyMemory`1 pipeline, Boolean async)
+[2023-03-03T17:00:24.970Z]    at Azure.Core.Pipeline.RetryPolicy.ProcessAsync(HttpMessage message, ReadOnlyMemory`1 pipeline, Boolean async)
+[2023-03-03T17:00:24.971Z]    at Azure.Core.Pipeline.RetryPolicy.ProcessAsync(HttpMessage message, ReadOnlyMemory`1 pipeline, Boolean async)
+[2023-03-03T17:00:24.972Z]    at Azure.Messaging.EventGrid.EventGridPublisherClient.SendEventsInternal(IEnumerable`1 events, Boolean async, CancellationToken cancellationToken)
+[2023-03-03T17:00:24.973Z]    at Azure.Messaging.EventGrid.EventGridPublisherClient.SendEventsAsync(IEnumerable`1 eventGridEvents, CancellationToken cancellationToken)
+[2023-03-03T17:00:24.976Z]    at Azure.Messaging.EventGrid.EventGridPublisherClient.SendEventAsync(EventGridEvent eventGridEvent, CancellationToken cancellationToken)
+[2023-03-03T17:00:24.977Z]    at TimerTrigger.PocTimerTriggerAsync(String bindingParam) in C:\Users\elias\Desktop\vsSituation\vsSituation\Function1.cs:line 26
+[2023-03-03T17:00:24.987Z]    at TimerTrigger.PocTimerTriggerAsync(String bindingParam) in C:\Users\elias\Desktop\vsSituation\vsSituation\Function1.cs:line 27
+[2023-03-03T17:00:24.988Z]    at Microsoft.Azure.Functions.Worker.Invocation.VoidTaskMethodInvoker`2.InvokeAsync(TReflected instance, Object[] arguments) in D:\a\_work\1\s\src\DotNetWorker.Core\Invocation\VoidTaskMethodInvoker.cs:line 22
+[2023-03-03T17:00:24.989Z]    --- End of inner exception stack trace ---
+[2023-03-03T17:00:24.991Z]    at System.Threading.Tasks.Task.ThrowIfExceptional(Boolean includeTaskCanceledExceptions)
+[2023-03-03T17:00:24.992Z]    at System.Threading.Tasks.Task`1.GetResultCore(Boolean waitCompletionNotification)
+[2023-03-03T17:00:25.001Z]    at Microsoft.Azure.Functions.Worker.Invocation.DefaultFunctionInvoker`2.<>c.<InvokeAsync>b__6_0(Task`1 t) in D:\a\_work\1\s\src\DotNetWorker.Core\Invocation\DefaultFunctionInvoker.cs:line 32
+[2023-03-03T17:00:25.002Z]    at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+[2023-03-03T17:00:25.003Z]    at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+[2023-03-03T17:00:25.004Z] --- End of stack trace from previous location ---
+[2023-03-03T17:00:25.008Z]    at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+[2023-03-03T17:00:25.018Z]    at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+[2023-03-03T17:00:25.019Z] --- End of stack trace from previous location ---
+[2023-03-03T17:00:25.021Z]    at Microsoft.Azure.Functions.Worker.Invocation.DefaultFunctionExecutor.ExecuteAsync(FunctionContext context) in D:\a\_work\1\s\src\DotNetWorker.Core\Invocation\DefaultFunctionExecutor.cs:line 44
+[2023-03-03T17:00:25.022Z]    at Microsoft.Azure.Functions.Worker.OutputBindings.OutputBindingsMiddleware.Invoke(FunctionContext context, FunctionExecutionDelegate next) in D:\a\_work\1\s\src\DotNetWorker.Core\OutputBindings\OutputBindingsMiddleware.cs:line 13
+[2023-03-03T17:00:25.033Z]    at Microsoft.Azure.Functions.Worker.Handlers.InvocationHandler.InvokeAsync(InvocationRequest request) in D:\a\_work\1\s\src\DotNetWorker.Grpc\Handlers\InvocationHandler.cs:line 82
+Stack:    at System.Threading.Tasks.Task.ThrowIfExceptional(Boolean includeTaskCanceledExceptions)
+[2023-03-03T17:00:25.034Z]    at System.Threading.Tasks.Task`1.GetResultCore(Boolean waitCompletionNotification)
+[2023-03-03T17:00:25.036Z]    at Microsoft.Azure.Functions.Worker.Invocation.DefaultFunctionInvoker`2.<>c.<InvokeAsync>b__6_0(Task`1 t) in D:\a\_work\1\s\src\DotNetWorker.Core\Invocation\DefaultFunctionInvoker.cs:line 32
+[2023-03-03T17:00:25.037Z]    at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+[2023-03-03T17:00:25.044Z]    at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+[2023-03-03T17:00:25.048Z] --- End of stack trace from previous location ---
+[2023-03-03T17:00:25.049Z]    at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+[2023-03-03T17:00:25.050Z]    at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+[2023-03-03T17:00:25.052Z] --- End of stack trace from previous location ---
+[2023-03-03T17:00:25.052Z]    at Microsoft.Azure.Functions.Worker.Invocation.DefaultFunctionExecutor.ExecuteAsync(FunctionContext context) in D:\a\_work\1\s\src\DotNetWorker.Core\Invocation\DefaultFunctionExecutor.cs:line 44
+[2023-03-03T17:00:25.059Z]    at Microsoft.Azure.Functions.Worker.OutputBindings.OutputBindingsMiddleware.Invoke(FunctionContext context, FunctionExecutionDelegate next) in D:\a\_work\1\s\src\DotNetWorker.Core\OutputBindings\OutputBindingsMiddleware.cs:line 13
+[2023-03-03T17:00:25.061Z]    at Microsoft.Azure.Functions.Worker.Handlers.InvocationHandler.InvokeAsync(InvocationRequest request) in D:\a\_work\1\s\src\DotNetWorker.Grpc\Handlers\InvocationHandler.cs:line 82.
